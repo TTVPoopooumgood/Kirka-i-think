@@ -1,4 +1,5 @@
-  const fetchCustomizations = async () => {
+var user = $('.js-entered-user').val();
+const fetchCustomizations = async () => {
     const customizations = await fetch(
       "https://juice-api.irrvlo.xyz/api/customizations"
     ).then((res) => res.json());
@@ -11,7 +12,7 @@
   fetchCustomizations();
 
   const fetchCurrentUser = async () => {
-    const user = await fetch("https://api.kirka.io/api/user", {
+    const user = await fetch("https://api.kirka.io/api/user/+user", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
